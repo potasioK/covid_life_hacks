@@ -1,0 +1,12 @@
+{% extends "covid_life_hackers/base.html" %}
+
+{% block content %}
+  <p>Please add a new topic:</p>
+  
+  <form action="{% url 'covid_life_hackers:add_new_topic' %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button name="submit">Add topic</button>
+  </form>
+  
+{% endblock content%}

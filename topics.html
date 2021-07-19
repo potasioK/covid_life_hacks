@@ -1,0 +1,19 @@
+{% extends "covid_life_hackers/base.html" %}
+
+{% block content %}
+
+  <p>Topics:</p>
+  
+  <ul>
+    {% for topic in topics %}
+      <li>
+        <a href="{% url 'covid_life_hackers:topic' topic.id %}">{{ topic }}</a>
+      </li>
+    {% empty %}
+      <li>No hay objetos.</li>
+    {% endfor %}
+  </ul>
+  
+  <a href="{% url 'covid_life_hackers:add_new_topic' %}">Add a new topic</a>
+  
+{% endblock content%}

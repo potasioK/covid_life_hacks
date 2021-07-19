@@ -1,0 +1,15 @@
+{% extends "covid_life_hackers/base.html" %}
+
+{% block content %}
+
+  <p><a href="{% url 'covid_life_hackers:topic' topic.id %}">{{ topic }}</a></p>
+  
+  <p>Edit entry:</p>
+  
+  <form action="{% url 'covid_life_hackers:topic' topic.id %}" method='post'>
+    {% csrt_token %}
+    {{ form.as_p }}
+    <button name="submit">Save changes</button>
+  </form>
+  
+{% endblock content %}

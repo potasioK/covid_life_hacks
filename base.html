@@ -1,0 +1,14 @@
+<p>
+
+  <a href="{% url 'covid_life_hackers:index' %}">COVID Life Hacks</a> -
+  <a href="{% url 'covid_life_hackers:topics' %}">Topics</a>
+  {% if user.is_authenticated %}
+    Welcome, {{ user.username }}.
+    <a href="{% url 'users:logout' %}">Log Out</a>
+  {% else %}
+    <a href="{% url 'users:register' %}">Register</a>
+    <a href="{% url 'users:login' %}">Log in</a>
+  {% endif %}
+</p>
+
+{% block content %}{% endblock content %}
