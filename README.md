@@ -1,0 +1,1 @@
+# covid_life_hacks
